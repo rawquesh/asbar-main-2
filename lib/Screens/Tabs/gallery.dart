@@ -1,3 +1,4 @@
+import 'package:asbar/Constants/colors.dart';
 import 'package:asbar/Widgets/bigTexT.dart';
 import 'package:asbar/Widgets/smallText.dart';
 import 'package:flutter/material.dart';
@@ -70,7 +71,7 @@ class GalleryPicCard extends StatelessWidget {
                 SmallText(text: '25 years'),
                 OutlinedButton(
                   onPressed: () {},
-                  child: Text('View Case'),
+                  child: Text('View Case',style: TextStyle(color: kBlue1),),
                   style: OutlinedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.h))),

@@ -89,6 +89,8 @@ flutter:
     - assets/effects/
     - assets/neweffects/
     - assets/svgs/
+    - assets/images/
+    - assets/cheeks/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

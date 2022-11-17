@@ -49,7 +49,7 @@ class _CameraTabState extends State<CameraTab> {
   double value = 1.5;
   double value2 = 0;
 
-  final String _assetEffectsPath = 'assets/effects/';
+  final String _assetEffectsPath = 'assets/neweffects/';
 
   CameraMode cameraMode = config.cameraMode;
   DisplayMode displayMode = config.displayMode;
@@ -114,17 +114,29 @@ class _CameraTabState extends State<CameraTab> {
                 await _controller.switchCamera();
 
                 // await _controller.toggleFlash();
-                // setState(() {});
+                setState(() {});
               },
               color: Colors.white70,
               iconSize: 40,
               icon: const Icon(Icons.flip_camera_ios_outlined),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 17),
+              child: Opacity(
+                opacity: .5,
+                child: Image.asset(
+                  'assets/asbar.png',
+                  height: 2.2.h,
+                  fit: BoxFit.fitHeight,
+                ),
+              ),
             ),
             GestureDetector(
               onTap: () {
                 // _controller.flipCamera();
               },
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   CustomDropDown(
                     handler: (int index) {
@@ -136,7 +148,7 @@ class _CameraTabState extends State<CameraTab> {
                     },
                   ),
                   SizedBox(
-                    height: 40.h,
+                    height: 30.h,
                     child: SfSliderTheme(
                       data: SfSliderTheme.of(context).copyWith(
                           activeLabelStyle: const TextStyle(
@@ -156,6 +168,7 @@ class _CameraTabState extends State<CameraTab> {
                           min: _effectsList[_effectIndex].min,
                           max: _effectsList[_effectIndex].max,
                           interval: 1,
+                          activeColor: kBlue2,
                           // isInversed: true,
                           value: value,
                           onChanged: (val) async {
@@ -341,53 +354,119 @@ class _CameraTabState extends State<CameraTab> {
     _effectsList.clear();
 
     _effectsList.add(Filter(
-      name: 'Cheecks and Jaw',
-      path: '${_assetEffectsPath}cheeksAndJaw.deepar',
+      name: 'modifiedlips',
+      path: '${_assetEffectsPath}modifiedlips.deepar',
       min: 0,
-      max: 40,
+      max: 60,
       gameObject: 'Mesh',
-      parameter: 'Cheeks',
+      parameter: 'Natural',
     ));
     _effectsList.add(Filter(
-      name: 'Lips Injection',
-      path: '${_assetEffectsPath}lipsInjection.deepar',
+      name: 'modifiedlips',
+      path: '${_assetEffectsPath}modifiedlips.deepar',
       min: 0,
-      max: 75,
+      max: 60,
       gameObject: 'Mesh',
-      parameter: 'Lips',
+      parameter: 'Pointy natural',
     ));
-
-    // _effectsList.add(Filter(
-    //   name: 'Cheeks',
-    //   path: '${_assetEffectsPath}cheeks.deepar',
-    //   min: 0,
-    //   max: 50,
-    //   gameObject: 'Mesh',
-    //   parameter: 'Cheeks',
-    // ));
     _effectsList.add(Filter(
-      name: 'Chin',
+      name: 'modifiedlips',
+      path: '${_assetEffectsPath}modifiedlips.deepar',
+      min: 0,
+      max: 60,
+      gameObject: 'Mesh',
+      parameter: "Cupid's bow",
+    ));
+    _effectsList.add(Filter(
+      name: 'modifiedlips',
+      path: '${_assetEffectsPath}modifiedlips.deepar',
+      min: 0,
+      max: 60,
+      gameObject: 'Mesh',
+      parameter: 'Uni-lip',
+    ));
+    _effectsList.add(Filter(
+      name: 'modifiedlips',
+      path: '${_assetEffectsPath}modifiedlips.deepar',
+      min: 0,
+      max: 60,
+      gameObject: 'Mesh',
+      parameter: 'Beestung',
+    ));
+    _effectsList.add(Filter(
+      name: 'modifiedlips',
+      path: '${_assetEffectsPath}modifiedlips.deepar',
+      min: 0,
+      max: 60,
+      gameObject: 'Mesh',
+      parameter: 'Smear',
+    ));
+    _effectsList.add(Filter(
+      name: 'modifiedlips',
+      path: '${_assetEffectsPath}modifiedlips.deepar',
+      min: 0,
+      max: 60,
+      gameObject: 'Mesh',
+      parameter: 'Glamour',
+    ));
+    _effectsList.add(Filter(
+      name: 'chin',
       path: '${_assetEffectsPath}chin.deepar',
       min: 0,
-      max: 50,
+      max: 40,
+      gameObject: 'Mesh.001',
+      parameter: 'jaw',
+    ));
+
+    _effectsList.add(Filter(
+      name: 'modifiedcheeks',
+      path: '${_assetEffectsPath}modifiedcheeks.deepar',
+      min: 0,
+      max: 60,
       gameObject: 'Mesh',
-      parameter: 'Jaw',
+      parameter: 'Key 1',
     ));
     _effectsList.add(Filter(
-      name: 'Cheecks and Jaw',
-      path: '${_assetEffectsPath}cheeksAndJaw.deepar',
+      name: 'modifiedcheeks',
+      path: '${_assetEffectsPath}modifiedcheeks.deepar',
+      min: 0,
+      max: 80,
+      gameObject: 'Mesh',
+      parameter: 'Key 2',
+    ));
+
+    _effectsList.add(Filter(
+      name: 'jaw2chin',
+      path: '${_assetEffectsPath}jaw2chin.deepar',
       min: 0,
       max: 40,
-      gameObject: 'Mesh',
-      parameter: 'Cheeks',
+      gameObject: 'Mesh.006',
+      parameter: 'jaw',
+    ));
+    _effectsList.add(Filter(
+      name: 'chin2',
+      path: '${_assetEffectsPath}chin2.deepar',
+      min: 0,
+      max: 40,
+      gameObject: 'Mesh.001',
+      parameter: 'jaw',
+    ));
+
+    _effectsList.add(Filter(
+      name: 'temple',
+      path: '${_assetEffectsPath}temple.deepar',
+      min: 0,
+      max: 40,
+      gameObject: 'Temple',
+      parameter: 'Temple',
     ));
     // _effectsList.add(Filter(
-    //   name: 'Jaw',
-    //   path: '${_assetEffectsPath}jaw.deepar',
+    //   name: 'modifiedcheeks',
+    //   path: '${_assetEffectsPath}modifiedcheeks.deepar',
     //   min: 0,
-    //   max: 50,
-    //   gameObject: 'Mesh.001',
-    //   parameter: 'jaw',
+    //   max: 60,
+    //   gameObject: 'Mesh',
+    //   parameter: 'Key 1',
     // ));
     // _effectsList.add(Filter(
     //   name: 'Temple',
@@ -462,62 +541,417 @@ class CustomDropDown extends StatefulWidget {
 }
 
 class _CustomDropDownState extends State<CustomDropDown> {
-  int index = 0;
+  int index = -1;
+  int subIndex = -1;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 15.w,
-      height: 25.h,
-      padding: EdgeInsets.symmetric(vertical: 1.h, horizontal: 2.w),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10.h),
-        color: Colors.white70,
-      ),
-      child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        _CircularItem(
-          isSelected: index == 0,
-          onTap: () {
-            setState(() {
-              index = 0;
-            });
-            widget.handler(index);
-          },
-          child: SvgPicture.asset(
-            'assets/svgs/lips.svg',
-            height: 2.5.h,
-            color: index == 0 ? Colors.white : kBlue1,
+    return Row(
+      children: [
+        Container(
+          width: 15.w,
+          height: 50.h,
+          padding: EdgeInsets.symmetric(vertical: 0.1.h, horizontal: 2.w),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10.h),
+            color: Colors.white70,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              _CircularItem(
+                isSelected: index == 0,
+                onTap: () {
+                  if (index == 0) {
+                    setState(() {
+                      index = -1;
+                    });
+                  } else {
+                    setState(() {
+                      index = 0;
+                    });
+                  }
+
+                  // widget.handler(subIndex);
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: index != 0 ? Colors.white : kBlue1,
+                    borderRadius: BorderRadius.circular(10.h),
+                  ),
+                  padding: const EdgeInsets.all(5),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10.h),
+                    child: Image.asset(
+                      'assets/images/1.jpg',
+                      // color: index == 0 ? Colors.white : kBlue1,
+                      // height: 25,
+                    ),
+                  ),
+                ),
+              ),
+              _CircularItem(
+                isSelected: index == 1,
+                onTap: () {
+                  setState(() {
+                    index = 1;
+                  });
+                  widget.handler(7);
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: index != 1 ? Colors.white : kBlue1,
+                    borderRadius: BorderRadius.circular(10.h),
+                  ),
+                  padding: const EdgeInsets.all(5),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10.h),
+                    child: Image.asset(
+                      'assets/images/2.jpg',
+                      // color: index == 0 ? Colors.white : kBlue1,
+                      // height: 25,
+                    ),
+                  ),
+                ),
+              ),
+              _CircularItem(
+                isSelected: index == 2,
+                onTap: () {
+                  setState(() {
+                    index = 2;
+                  });
+                  // widget.handler(8);
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: index != 2 ? Colors.white : kBlue1,
+                    borderRadius: BorderRadius.circular(10.h),
+                  ),
+                  padding: const EdgeInsets.all(5),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10.h),
+                    child: Image.asset(
+                      'assets/images/3.jpg',
+                      // color: index == 0 ? Colors.white : kBlue1,
+                      // height: 25,
+                    ),
+                  ),
+                ),
+              ),
+              _CircularItem(
+                isSelected: index == 3,
+                onTap: () {
+                  setState(() {
+                    index = 3;
+                  });
+                  widget.handler(10);
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: index != 3 ? Colors.white : kBlue1,
+                    borderRadius: BorderRadius.circular(10.h),
+                  ),
+                  padding: const EdgeInsets.all(5),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10.h),
+                    child: Image.asset(
+                      'assets/images/4.jpg',
+                      // color: index == 0 ? Colors.white : kBlue1,
+                      // height: 25,
+                    ),
+                  ),
+                ),
+              ),
+              _CircularItem(
+                isSelected: index == 4,
+                onTap: () {
+                  setState(() {
+                    index = 4;
+                  });
+                  widget.handler(11);
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: index != 4 ? Colors.white : kBlue1,
+                    borderRadius: BorderRadius.circular(10.h),
+                  ),
+                  padding: const EdgeInsets.all(5),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10.h),
+                    child: Image.asset(
+                      'assets/images/5.jpg',
+                      // color: index == 0 ? Colors.white : kBlue1,
+                      // height: 25,
+                    ),
+                  ),
+                ),
+              ),
+              _CircularItem(
+                isSelected: index == 5,
+                onTap: () {
+                  setState(() {
+                    index = 5;
+                  });
+                  widget.handler(12);
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: index != 5 ? Colors.white : kBlue1,
+                    borderRadius: BorderRadius.circular(10.h),
+                  ),
+                  padding: const EdgeInsets.all(5),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10.h),
+                    child: Image.asset(
+                      'assets/images/6.jpg',
+                      // color: index == 0 ? Colors.white : kBlue1,
+                      // height: 25,
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
-        _CircularItem(
-          isSelected: index == 1,
-          onTap: () {
-            setState(() {
-              index = 1;
-            });
-            widget.handler(index);
-          },
-          child: SmallText(
-            text: 'Round',
-            color: index == 1 ? Colors.white : kBlue1,
-            size: 7,
+        const SizedBox(width: 5),
+        //TODO lkj
+
+        if (index != -1)
+          Container(
+            width: 15.w,
+            // height: 50.h,
+            padding: EdgeInsets.symmetric(horizontal: 2.w),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10.h),
+              color: Colors.white70,
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (index == 0) ...[
+                  _CircularItem(
+                    isSelected: subIndex == 0,
+                    onTap: () {
+                      setState(() {
+                        subIndex = 0;
+                      });
+                      widget.handler(subIndex);
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: subIndex != 0 ? Colors.white : kBlue1,
+                        borderRadius: BorderRadius.circular(10.h),
+                      ),
+                      padding: const EdgeInsets.all(5),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10.h),
+                        child: Image.asset(
+                          'assets/cheeks/3.jpg',
+                          // color: index == 0 ? Colors.white : kBlue1,
+                          // height: 25,
+                        ),
+                      ),
+                    ),
+                  ),
+                  _CircularItem(
+                    isSelected: subIndex == 1,
+                    onTap: () {
+                      setState(() {
+                        subIndex = 1;
+                      });
+                      widget.handler(subIndex);
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: subIndex != 1 ? Colors.white : kBlue1,
+                        borderRadius: BorderRadius.circular(10.h),
+                      ),
+                      padding: const EdgeInsets.all(5),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10.h),
+                        child: Image.asset(
+                          'assets/cheeks/4.jpg',
+                          // color: index == 0 ? Colors.white : kBlue1,
+                          // height: 25,
+                        ),
+                      ),
+                    ),
+                  ),
+                  _CircularItem(
+                    isSelected: subIndex == 2,
+                    onTap: () {
+                      setState(() {
+                        subIndex = 2;
+                      });
+                      widget.handler(subIndex);
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: subIndex != 2 ? Colors.white : kBlue1,
+                        borderRadius: BorderRadius.circular(10.h),
+                      ),
+                      padding: const EdgeInsets.all(5),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10.h),
+                        child: Image.asset(
+                          'assets/cheeks/5.jpg',
+                          // color: index == 0 ? Colors.white : kBlue1,
+                          // height: 25,
+                        ),
+                      ),
+                    ),
+                  ),
+                  _CircularItem(
+                    isSelected: subIndex == 3,
+                    onTap: () {
+                      setState(() {
+                        subIndex = 3;
+                      });
+                      widget.handler(subIndex);
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: subIndex != 3 ? Colors.white : kBlue1,
+                        borderRadius: BorderRadius.circular(10.h),
+                      ),
+                      padding: const EdgeInsets.all(5),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10.h),
+                        child: Image.asset(
+                          'assets/cheeks/6.jpg',
+                          // color: index == 0 ? Colors.white : kBlue1,
+                          // height: 25,
+                        ),
+                      ),
+                    ),
+                  ),
+                  _CircularItem(
+                    isSelected: subIndex == 4,
+                    onTap: () {
+                      setState(() {
+                        subIndex = 4;
+                      });
+                      widget.handler(subIndex);
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: subIndex != 4 ? Colors.white : kBlue1,
+                        borderRadius: BorderRadius.circular(10.h),
+                      ),
+                      padding: const EdgeInsets.all(5),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10.h),
+                        child: Image.asset(
+                          'assets/cheeks/7.jpg',
+                          // color: index == 0 ? Colors.white : kBlue1,
+                          // height: 25,
+                        ),
+                      ),
+                    ),
+                  ),
+                  _CircularItem(
+                    isSelected: subIndex == 5,
+                    onTap: () {
+                      setState(() {
+                        subIndex = 5;
+                      });
+                      widget.handler(subIndex);
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: subIndex != 5 ? Colors.white : kBlue1,
+                        borderRadius: BorderRadius.circular(10.h),
+                      ),
+                      padding: const EdgeInsets.all(5),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10.h),
+                        child: Image.asset(
+                          'assets/cheeks/8.jpg',
+                          // color: index == 0 ? Colors.white : kBlue1,
+                          // height: 25,
+                        ),
+                      ),
+                    ),
+                  ),
+                  _CircularItem(
+                    isSelected: subIndex == 6,
+                    onTap: () {
+                      setState(() {
+                        subIndex = 6;
+                      });
+                      widget.handler(subIndex);
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: subIndex != 6 ? Colors.white : kBlue1,
+                        borderRadius: BorderRadius.circular(10.h),
+                      ),
+                      padding: const EdgeInsets.all(5),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10.h),
+                        child: Image.asset(
+                          'assets/cheeks/9.jpg',
+                          // color: index == 0 ? Colors.white : kBlue1,
+                          // height: 25,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+                if (index == 2) ...[
+                  _CircularItem(
+                    isSelected: subIndex == 7,
+                    onTap: () {
+                      setState(() {
+                        subIndex = 7;
+                      });
+                      widget.handler(8);
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: subIndex != 7 ? Colors.white : kBlue1,
+                        borderRadius: BorderRadius.circular(10.h),
+                      ),
+                      padding: const EdgeInsets.all(5),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10.h),
+                        child: Image.asset(
+                          'assets/cheeks/1.jpg',
+                          // color: index == 0 ? Colors.white : kBlue1,
+                          // height: 25,
+                        ),
+                      ),
+                    ),
+                  ),
+                  _CircularItem(
+                    isSelected: subIndex == 8,
+                    onTap: () {
+                      setState(() {
+                        subIndex = 8;
+                      });
+                      widget.handler(9);
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: subIndex != 8 ? Colors.white : kBlue1,
+                        borderRadius: BorderRadius.circular(10.h),
+                      ),
+                      padding: const EdgeInsets.all(5),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10.h),
+                        child: Image.asset(
+                          'assets/cheeks/2.jpg',
+                          // color: index == 0 ? Colors.white : kBlue1,
+                          // height: 25,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ],
+            ),
           ),
-        ),
-        _CircularItem(
-          isSelected: index == 2,
-          onTap: () {
-            setState(() {
-              index = 2;
-            });
-            widget.handler(index);
-          },
-          child: SmallText(
-            text: 'Round',
-            color: index == 2 ? Colors.white : kBlue1,
-            size: 7,
-          ),
-        ),
-      ]),
+      ],
     );
   }
 }

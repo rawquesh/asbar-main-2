@@ -43,7 +43,7 @@ class TabsScaffold extends StatelessWidget {
                   ),
                   Image.asset(
                     'assets/asbar.png',
-                    height: 6.h,
+                    height: 2.2.h,
                     fit: BoxFit.fitHeight,
                   ),
                   Spacer(),

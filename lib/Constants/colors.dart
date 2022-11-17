@@ -9,6 +9,6 @@ const kGrey = Color(0xFFC4C4C4);
 const kBorderGrey = Color(0xFFD5D5D5);
 const kDarkGrey = Color(0xFF999999);
 
-const kBlue1 = Color(0xFF02A4F9);
-const kBlue2 = Color(0xFF0584FD);
+const kBlue1 = Color(0xFFB3918F);
+const kBlue2 = Color(0xFFB3918F);
 const kDarkBlue = Color(0xFF0C2333);
