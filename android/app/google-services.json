@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "24298488579",
+    "project_id": "asbar-app",
+    "storage_bucket": "asbar-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:24298488579:android:7f0c2089f17fa56e5b1f36",
+        "android_client_info": {
+          "package_name": "com.assistine.asbar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "24298488579-sgoljdh7hh8hnta5no63gkahgtutp2hu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2qMy0nkLNRfcSK8Xq105eTxtI1doJfmQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "24298488579-sgoljdh7hh8hnta5no63gkahgtutp2hu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
